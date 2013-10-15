@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+
+ <head> <link type="text/css" rel="stylesheet" href="stylesheets/main.css" /> </head>
+
+
+    <h1> MERCATO </h1>
+    <br>
+    <marquee> Welcome to NITT's online flea market! </marquee>
+
+    <hr><hr>
+
+  <body>
+	<table id = "products">
+	<tr>
+	<th>PRODUCT NAME</th>
+	<th>PRODUCT DESCRIPTION</th>
+    <th>PRODUCT PRICE</th>
+    <th>OWNER</th>
+    <th>CONTACT SELLER</th>
+	</tr>
+    
+    {% for p in products %}
+      {% if loop.index is divisibleby 2 %}
+      	<tr class = "alt">
+        <td>{{ p.name }}</td>  <td>{{ p.desc }}</td>  <td>{{ p.price }}</td>
+      
+      	{% if p.owner %}
+          <td>{{ p.owner.nickname() }}</td>
+      	{% else %}
+          <td>anonymous person</td>
+      	{% endif %}
+
+        <td align = "center"> <a href="mailto:{{ p.owner.email() }}">contact</a> </td>
+      	</tr>
+	  {% else %}
+        <tr>
+        <td>{{ p.name }}</td>  <td>{{ p.desc }}</td>  <td>{{ p.price }}</td>
+      
+      	{% if p.owner %}
+          <td>{{ p.owner.nickname() }}</td>
+      	{% else %}
+          <td>anonymous person</td>
+      	{% endif %}
+
+        <td align = "center"> <a href="mailto:{{ p.owner.email() }}">contact</a> </td>
+      	</tr>
+      {% endif %}
+    {% endfor %}
+
+    
+  </body>
+</html>
+{% endautoescape %}

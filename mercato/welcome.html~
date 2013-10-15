@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+	<head> <link type="text/css" rel="stylesheet" href="stylesheets/main.css" /> </head>
+   
+ 
+   
+
+   <h1> MERCATO </h1>
+
+    <div class = "sb">
+   <form action="/search" method = "post">
+		<fieldset style = "border: 2px solid #781351; width: 10em;">
+		<legend>Search for a product</legend>
+		<p><label for="query" style = "width: 10em;
+float: left;
+text-align: left;
+margin-right: 0.5em;
+display: block">Search</label> <input type="text" name="searchterm" id="query" /></p>
+		
+		<p class="submit"><input type="submit" value="Search" /></p>
+		</fieldset>
+		</form> 
+   </div>   
+
+   <div class = "cont">
+    <br>
+    <marquee> Hello, {{ name }}. Welcome to NITT's online flea market! </marquee>
+
+    <hr><hr>
+
+  <body>
+  <div class = "leftlinks">
+	<a href = "{{ url_addProd|safe }}"> Add a product </a> <br><br>
+	<a href = "{{ url_itemList|safe }}"> View all items </a> <br><br>
+	<a href = "{{ url_myList|safe }}"> View my items </a> <br><br>
+	<!-- <a href = "search.html"> Search </a> <br><br> -->
+    <a href="{{ url_logout|safe }}"> Logout </a>
+  </div>
+
+  <p class = "intro">
+  The evergrowing number of members of the NITT family have for long experienced a need to exchange new or used goods among themselves. However, due to the severe inadequacy of the existence of a platform to facilitate transactions, buying or selling goods from each other has always remained infeasible and an elusive dream for NITTians. Our endeavour has been to develop just such a platform, where users can login and check out all the products that are currently on sale. People looking to sell goods need to upload a name and description of the product they intend to sell, and then wait to be approached by other members of the Mercato community. Mercato aspires to be an efficient and readily usable resource for those within the college community looking for an online flea market
+  </p>
+
+  
+
+
+    
+  </body>
+
+  </div>
+</html>
+
+
+
+
+
+
+
